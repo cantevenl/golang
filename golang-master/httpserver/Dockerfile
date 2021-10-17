@@ -1,9 +1,11 @@
-FROM ubuntu
-ENV MY_SERVICE_PORT=80
-ENV MY_SERVICE_PORT1=80
-ENV MY_SERVICE_PORT2=80
-ENV MY_SERVICE_PORT3=80
-LABEL multi.label1="value1" multi.label2="value2" other="value3"
-ADD bin/amd64/httpserver /httpserver
-EXPOSE 80
-ENTRYPOINT /httpserver
+FROM golang:1.16-alpine AS build
+RUN apk add --no-cache git
+RUN git clone https://github.com/cantevenl/golang.git
+RUN go get github.com/golang/glog
+RUN go build -o /go/httpserver golang/golang-master/httpserver/main.go
+
+FROM scratch
+COPY --from=build /go/httpserver /go/httpserver
+WORKDIR /go
+EXPOSE 8080
+ENTRYPOINT ["./httpserver"]
