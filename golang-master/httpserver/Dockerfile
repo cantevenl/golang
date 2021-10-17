@@ -10,4 +10,4 @@ FROM scratch
 COPY --from=build /go/httpserver /go/httpserver
 WORKDIR /go
 EXPOSE 8080
-ENTRYPOINT ["./httpserver"]
+ENTRYPOINT ["/go/httpserver"]
