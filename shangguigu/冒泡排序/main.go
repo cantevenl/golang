@@ -25,4 +25,6 @@ func main() {
 	arr := [5]int{27, 9, 88, 25, 5}
 	//将数组传递给一个函数，完成排序
 	BubbleSort(&arr)
+
+	fmt.Println("main函数的arr=", arr) //有序的。因为传入的地址
 }

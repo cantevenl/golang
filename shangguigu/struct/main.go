@@ -34,10 +34,10 @@ func main() {
 	fmt.Println(p1)
 
 	//使用ptr需要使用new
-	a := "啊"
+	a := "啊啊啊啊啊啊啊啊啊啊啊啊"
 	p1.ptr = new(string)
 	p1.ptr = &a
-	fmt.Println(p1)
+	fmt.Println(*p1.ptr)
 
 	//不同结构体变量的字段是独立的，互不影响，一个结构体变量字段的更改，
 	//不影响另外一个。结构体是值类型

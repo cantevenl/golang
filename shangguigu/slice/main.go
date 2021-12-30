@@ -3,6 +3,25 @@ package main
 import "fmt"
 
 func main() {
+
+	//var arr [3]int = [...]int{1, 2, 3}
+	//fmt.Printf("arr地址：%p,arr[0]地址:%p", &arr, &arr[0])
+
+	//var slice []int =[]int{1,2,3,4,5}
+	//var slice []int = make([]int,5,10)
+	//fmt.Println(slice)
+	//fmt.Printf("扩容前slice地址：%p\n",&slice)
+	//fmt.Println(slice)
+	//fmt.Printf("扩容前slice[0]地址：%p\n",&slice[0])
+	//
+	//slice = append(slice,6,7,8)
+	//fmt.Println(slice)
+	//fmt.Printf("扩容1slice[0]地址：%p\n",&slice[0])
+	//
+	//slice = append(slice,slice...)
+	//fmt.Println(slice)
+	//fmt.Printf("扩容2slice[0]地址：%p\n",&slice[0])
+
 	//切片make方法
 	var slice []float64 = make([]float64, 5, 10)
 	slice[1] = 10

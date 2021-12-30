@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"shangguigu/factory/model"
+	"golang/shangguigu/factory/model"
 )
 
 func main() {

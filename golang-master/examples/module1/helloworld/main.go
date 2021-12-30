@@ -8,7 +8,7 @@ import (
 
 func main() {
 	//flag.String这个方法可以将参数传递进来
-	//go run main.go --name zhuerba
+	//go run monster.go --name zhuerba
 	name := flag.String("name", "world", "specify the name you want to say hi")
 	flag.Parse()
 	fmt.Println("os args is:", os.Args)

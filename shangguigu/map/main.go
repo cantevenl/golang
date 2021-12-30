@@ -5,13 +5,20 @@ import "fmt"
 func main() {
 	//第一种使用方式
 	//map声明和注意事项
-	var a map[string]string
-	fmt.Println(a)
+	//var a map[string]string
+	//fmt.Println(a)
 	//在使用map前，需要先make，make的作用是给map分配数据空间
-	a = make(map[string]string, 10)
-	a["一号"] = "刘备"
-	a["二号"] = "关羽"
-	a["三号"] = "张飞"
+	//a = make(map[string]string, 10)
+	//a["一号"] = "刘备"
+	//a["二号"] = "关羽"
+	//a["三号"] = "张飞"
+	//fmt.Println(a)
+
+	var a map[string]string
+	a = make(map[string]string)
+	a["一号"] = "牛"
+	a["二号"] = "猪"
+	a["三号"] = "虎"
 	fmt.Println(a)
 
 	//第二种方式
@@ -42,7 +49,6 @@ func main() {
 		"hero3": "吴用",
 	}
 	fmt.Println(heroes)
-
 	studentMap := make(map[string]map[string]string)
 
 	studentMap["stu01"] = make(map[string]string, 3)
@@ -73,4 +79,29 @@ func main() {
 		}
 		fmt.Println()
 	}
+
+	heroes = make(map[string]string)
+	fmt.Println(heroes)
+
+	studentMap = make(map[string]map[string]string)
+	fmt.Println(studentMap)
+
+	var niu map[string]string
+	niu = make(map[string]string)
+	niu["1"] = "1"
+	niu["2"] = "2"
+	fmt.Println(niu)
+
+	var zhu []map[string]string
+	zhu = make([]map[string]string, 2)
+	zhu[0] = make(map[string]string)
+	zhu[0]["1"] = "1"
+	zhu[1] = make(map[string]string)
+	zhu[1]["2"] = "2"
+	zhu2 := map[string]string{
+		"3": "3",
+	}
+	zhu = append(zhu, zhu2)
+	fmt.Println(zhu)
+
 }

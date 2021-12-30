@@ -16,7 +16,7 @@ func main() {
 	fmt.Println(map1)
 
 	//如果按照map的key的顺序进行排序输出
-	//1.先将map的key放入到切片中
+	//1.先将map的key放入到切片种
 	//2.对切片排序
 	//3.遍历切片，然后按照key来输出map的值
 
