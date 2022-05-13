@@ -5,6 +5,7 @@ import (
 	"net" //做网络socket开发，net包包含了我们需要所有的方法和函数
 )
 
+
 func process(conn net.Conn) {
 	//这里循环的接收客户端发送的数据
 	defer conn.Close() //关闭conn
@@ -19,11 +20,11 @@ func process(conn net.Conn) {
 		fmt.Printf("客户端发送的信息为：")
 		n, err := conn.Read(buf) //从conn读取
 		if err != nil {
-			fmt.Println("服务器的Read err=", err)
+			fmt.Println("\n服务器的Read err=", err)
 			return
 		}
 		//3.接收数据后，显示客户端发送的数据到服务器的终端
-		fmt.Print(string(buf[:n]))
+		fmt.Print(string(buf[:n]))	//实际读到的位置
 	}
 }
 
