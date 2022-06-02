@@ -19,11 +19,6 @@ package main
 //var client *mongo.Client
 //
 //func initDB() {
-//	// 设置客户端连接配置 52.82.67.135 161.189.113.71
-//	//primary：172.31.8.156  secondary：172.31.5.2
-//	//clientOptions := options.Client().ApplyURI("mongodb://face_center:123@172.31.8.156:27017,172.31.5.2:27017/?replicaSet=sioeye&authSource=face_center&compressors=disabled&gssapiServiceName=mongodb")
-//	clientOptions := options.Client().ApplyURI("mongodb://face_center:123@172.31.8.156:27017,172.31.5.2:27017/?replicaSet=sioeye-face&slaveok=true&authSource=face_center&compressors=disabled&gssapiServiceName=mongodb")
-//	//clientOptions := options.Client().ApplyURI("mongodb://root:123456@161.189.113.71:27017/?connect=direct&replicaSet=sioeye&authSource=admin&compressors=disabled&gssapiServiceName=mongodb")
 //	// 连接到MongoDB
 //	var err error
 //	client, err = mongo.Connect(context.TODO(), clientOptions)
