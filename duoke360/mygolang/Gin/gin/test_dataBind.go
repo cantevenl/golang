@@ -20,7 +20,8 @@ func GoRegister(c *gin.Context) {
 func Register1(c *gin.Context) {
 	var user User
 	c.ShouldBind(&user)
-	c.String(200, "form data : %s", user)
+
+	c.String(200, "form data:%s", user)
 }
 
 type User2 struct {
@@ -29,20 +30,37 @@ type User2 struct {
 }
 
 func TestGetBind(c *gin.Context) {
-	var user2 User2
-	err := c.ShouldBind(&user2)
+	var user User2
+	err := c.ShouldBind(&user)
 	if err != nil {
 		log.Fatal(err)
 	}
-	c.String(200, "User2:%s", user2)
+	c.String(200, "User:%s", user)
+}
+
+type User3 struct {
+	Username string `uri:"username"`
+	Password string `uri:"password"`
+}
+
+func TestUrlBind(c *gin.Context) {
+	var user User3
+	err := c.ShouldBindUri(&user)
+	if err != nil {
+		log.Fatal(err)
+	}
+	c.String(200, "User:%s", user)
 }
 
 func main() {
 	engine := gin.Default()
 	engine.LoadHTMLGlob("templates/*")
 	engine.GET("/register", GoRegister)
-	engine.POST("/register",Register1)
-	//http://localhost:8888/testGetBind?username=zhu&password=12336456
-	engine.GET("/testGetBind",TestGetBind)
+	engine.POST("/register", Register1)
+
+	// http://localhost:8888/testGetBind?username=zhu&password=123
+	engine.GET("/testGetBind", TestGetBind)
+	// http://localhost:8888/testUrlBind/niu/123
+	engine.GET("/testUrlBind/:username/:password",TestUrlBind)
 	engine.Run(":8888")
 }
